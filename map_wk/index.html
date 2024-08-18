@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Request Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body, html { height: 100%; margin: 0; }
+        #map { height: 100%; width: 100%; position: absolute; top: 0; bottom: 0; }
+        .form-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 20px;
+        }
+        .form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 5px;
+            width: 300px;
+        }
+        h2 { margin-top: 0; }
+    </style>
+    <link rel="icon" href="../img.png" type="image/png">
+</head>
+<body>
+
+<div id="map"></div>
+<div class="form-container">
+    <!-- Request Blood Form -->
+    <div class="form">
+        <h2>Request Blood</h2>
+        <form id="requestForm">
+            <label for="bags">Number of Bags:</label>
+            <input type="number" id="bags" name="bags" min="1" required><br><br>
+            <label for="bloodGroup">Blood Group:</label>
+            <select id="bloodGroup" name="bloodGroup" required>
+                <option value="A+ve">A+ve</option>
+                <option value="A-ve">A-ve</option>
+                <option value="B+ve">B+ve</option>
+                <option value="B-ve">B-ve</option>
+                <option value="O+ve">O+ve</option>
+                <option value="O-ve">O-ve</option>
+                <option value="AB+ve">AB+ve</option>
+                <option value="AB-ve">AB-ve</option>
+            </select><br><br>
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" required><br><br>
+            <button type="submit">Place Request</button>
+        </form>
+    </div>
+
+    <!-- Donate Blood Form -->
+    <div class="form">
+        <h2>Donate Blood</h2>
+        <form id="donateForm">
+            <label for="donateBags">Number of Bags:</label>
+            <input type="number" id="donateBags" name="donateBags" min="1" required><br><br>
+            <label for="donateBloodGroup">Blood Group:</label>
+            <select id="donateBloodGroup" name="donateBloodGroup" required>
+                <option value="A+ve">A+ve</option>
+                <option value="A-ve">A-ve</option>
+                <option value="B+ve">B+ve</option>
+                <option value="B-ve">B-ve</option>
+                <option value="O+ve">O+ve</option>
+                <option value="O-ve">O-ve</option>
+                <option value="AB+ve">AB+ve</option>
+                <option value="AB-ve">AB-ve</option>
+            </select><br><br>
+            <label for="donateMobile">Mobile Number:</label>
+            <input type="tel" id="donateMobile" name="donateMobile" required><br><br>
+            <button type="submit">Submit Donation</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="js_map_wk_index.js"></script>
